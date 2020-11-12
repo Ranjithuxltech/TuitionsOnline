@@ -1,0 +1,243 @@
+﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+a, .btn-link {
+    color: #0366d6;
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+
+.nav-item a {
+    color: #d7d7d7;
+    border-radius: 4px;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    line-height: 3rem;
+}
+
+    .nav-item a.active {
+        background-color: rgba(255,255,255,0.25);
+        color: white;
+    }
+
+    .nav-item a:hover {
+        background-color: rgba(255,255,255,0.1);
+        color: white;
+    }
+
+.content {
+    padding-top: 1.1rem;
+}
+
+.navbar-toggler {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.valid.modified:not([type=checkbox]) {
+    outline: 1px solid #26b050;
+}
+
+.invalid {
+    outline: 1px solid red;
+}
+
+.validation-message {
+    color: red;
+}
+
+
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 768px) {
+
+    .navbar-toggler {
+        display: none;
+    }
+}
+
+/*VP JP 11/10 balzor modal*/
+
+.blazored-modal {
+    display: flex;
+    flex-direction: column;
+    width: auto !important;
+    border-radius: 5px;
+    padding: 0rem !important;
+    z-index: 2;
+    box-shadow: 0 0px 0px rgba(0,0,0,0) !important;
+}
+
+.blazored-modal-overlay {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: auto !important;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.5);
+}
+
+
+
+.blazored-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 0 0 0 !important;
+}
+
+
+
+.blazored-modal-active {
+    display: flex;
+}
+
+
+
+.disabled {
+    pointer-events: none;
+    opacity: 1.0;
+    background: #CCC;
+}
+
+.blazored-modal-container {
+    display: normal !important;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.fa-user:before {
+    content: "\f007";
+    margin-left: -12px !important;
+}
+
+.fa-globe:before {
+    content: "\f0ac";
+    margin-left: 13px !important;
+}
+
+.fa-check:before {
+    content: "\f00c";
+    margin-left: -8px !important;
+}
+
+.fa-edit:before {
+    content: "\f044";
+    margin-left: -17px !important;
+}
+
+.fa-users:before {
+    content: "\f0c0";
+    margin-left: 40px !important;
+}
+
+.fa-remove:before, .fa-close:before, .fa-times:before {
+    content: "\f00d";
+    margin-left: -8px;
+}
+
+.fa-list-alt:before {
+    content: "\f022";
+    margin-left: -12px;
+}
+
+.fa-shopping-cart:before {
+    content: "\f07a";
+    margin-left: 10px;
+}
+
+.brandmanager {
+    width: 200px;
+}
+
+.button-color {
+    background-color: #383230;
+    color: white;
+    display: flex;
+    justify-content: center;
+    border: rgba(0,0,0,0.5) !important;
+    font-size: small;
+}
+
+    .button-color:hover {
+        color: white !important;
+        background-color: #aba27c !important;
+    }
+
+
+
+
+
+.footer-button-color {
+    width: 100px;
+    height: 40px;
+    background-color: #383230;
+    color: white;
+    border-radius: 0.25rem;
+}
+
+    .footer-button-color:hover {
+        color: white !important;
+        background-color: #aba27c !important;
+    }
+
+.btn-secondary {
+    color: #fff;
+    background-color: #383230;
+    border-color: #383230;
+}
+
+
+
+.modal-head {
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin-left: 20px;
+}
+
+
+
+.modal-footer-space {
+    height: 73px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+
+
+.search-top {
+    font-size: smaller;
+    color: #fff;
+    background-color: #383230;
+    border-color: #383230;
+}
+
+
+
+.modal-header-color {
+    background-color: #383230;
+    width: 35rem;
+}
+
+.btn:hover {
+    color: #aba27c;
+    text-decoration: none;
+}

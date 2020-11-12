@@ -1,0 +1,44 @@
+﻿<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3 fixed-top" style="background-color:black">
+    <div class="container">
+        <img src="Image/tuitionsonline logo (1) (1).png" class="responsive" style="width: 73px ; height: 59px">
+        
+        <button class="navbar-toggler" @onclick="ToggleNavMenu" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="@NavMenuCssClass navbar-collapse d-sm-inline-flex flex-sm-row-reverse" @onclick="CollapseNavMenu">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="" Match="NavLinkMatch.All">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="about">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="teachers">TEACHERS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="courses">COURSES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="login">LOGIN</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+@code { bool collapseNavMenu = true;
+
+    string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+    void CollapseNavMenu()
+    {
+        collapseNavMenu = true;
+    } }

@@ -1,0 +1,61 @@
+﻿@page "/"
+
+@inject IModalService BlazoredModal
+
+
+<div class="row">
+    <div class="col-3 font-weight-bolder font">
+        <div class="col" style="position:absolute;top:26%;">
+            <div class="row font-weight-bolder" style="color:lightblue;font-size:41px">
+                Online
+            </div>
+            <div class="row font-weight-bolder" style="color:royalblue;font-size:45px">
+                TUITION
+            </div>
+            <div class="row font-weight-bold" style="color:orange;font-size:25px">
+                anywhere, anytime
+            </div>
+            <br />
+            <div class="row">
+                <button class="btn btn-warning" style="width: 150px;font-weight: 600;">Learn</button>
+            </div>
+            <br />
+            <div class="row">
+                <button class="btn btn-warning" style="width: 150px;font-weight: 600;" @onclick="@OpenTeachersForm">Teach</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-9">
+        <div class="container">
+            <img src="Image/Artboard1New.png" class="responsive" width="768" height="563">
+
+        </div>
+    </div>
+</div>
+
+@code{
+    public void OpenTeachersForm()
+    {
+        //ModalService.OnClose += OnModalClose;
+        BlazoredModal.Show("", typeof(TeacherRegistrationUI));
+    }
+
+    //async void OnModalClose(ModalResult modalResult)
+    //{
+    //    if (modalResult.Cancelled)
+    //    {
+    //    }
+    //    else
+    //    {
+    //        await OnReload();
+    //    }
+
+    //    ModalService.OnClose -= OnModalClose;
+    //}
+
+    //protected async Task OnReload()
+    //{
+    //    await GetBrands(currentPage);
+    //    this.StateHasChanged();
+    //}
+}

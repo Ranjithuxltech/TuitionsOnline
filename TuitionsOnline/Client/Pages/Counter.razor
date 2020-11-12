@@ -1,0 +1,296 @@
+﻿@page "/counter"
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+
+
+@*<div style="width:100%; ">
+
+
+         EditForm for Create POS Item
+        <EditForm Context="formContext" Model="@teacher" OnValidSubmit="@CreateTeacher()">
+            <DataAnnotationsValidator />
+
+
+             
+            <div class="modal-header" style="background-color:#232122; margin-top:0px;">
+                <h4 align="center" class="modal-title mt-2" style="color:white; width:100%; ">UXLTA Teachers Registration Form</h4>
+                <button type="button" class="close" data-dismiss="modal" style="color:white">×</button>
+            </div>
+
+
+
+            
+            <div class="modal-body" style="overflow-y:scroll; height:60vh;">
+
+                <div style="color:red ;text-align:center; width:100%;  justify-content: center; align-content: center; align-items: center;">
+                    <span style="color:red;">@DuplicateMessage</span>
+                </div>
+                 
+                <div>
+                    <div style="text-align:center; width:100%;  justify-content: center; align-content: center; align-items: center;">
+                        <span class="font-weight-bold" style="color:saddlebrown;font-size:20px">Personal Information </span>
+                    </div>
+
+                    <div class="row mt-4 ml-2 mr-2">
+
+
+                        <div class="col-4">
+                            <span style="color: red">*</span>
+                            <label style="font-weight:600">Teachers Full Name</label>
+                            <InputText @bind-Value="@teacher.TeachersFullName" id="ItemNumber" class="form-control" minlength="4" maxlength="20" />
+                            <ValidationMessage For="@(() => teacher.TeachersFullName )" />
+                        </div>
+
+                        <div class="col-4">
+                            <span style="color: red">*</span>
+                            <label style="font-weight:600">Email Address</label>
+                            <input @bind-value="@teacher.EmailAddress" id="ItemName" class="form-control" minlength="4" maxlength="80" />
+                            <ValidationMessage For="@(() => teacher.EmailAddress)" />
+                        </div>
+
+                        <div class="col-4">
+                            <span style="color: red">*</span>
+                            <label style="font-weight:600">Contact Phone Number</label>
+                            <input @bind-value="@teacher.ContactPhoneNumber" id="ItemNumber" class="form-control" minlength="4" maxlength="20" />
+                            <ValidationMessage For="@(() => teacher.ContactPhoneNumber)" />
+                        </div>
+                    </div>
+
+                    <div class="row mt-4 ml-2 mr-2">
+
+                        <div class="col-4">
+                            <span style="color: red">*</span>
+                            <label style="font-weight:600">Year of Birth</label>
+                            <select class="form-control">
+                                <option style="background-color: lightgrey" value="">Select the Year</option>
+
+                                <option style="background-color: lightgrey">1990</option>
+                                <option style="background-color: lightgrey">1991</option>
+                                <option style="background-color: lightgrey">1992</option>
+                                <option style="background-color: lightgrey">1993</option>
+
+                            </select>
+                            <ValidationMessage For="@(() => teacher.YearOfBirth)" />
+                        </div>
+                        <div class="col-4">
+                            <span style="color: red">*</span>
+                            <label style="font-weight:600">City of Residence</label>
+                            <input @bind-value="@teacher.ResidentialCity" id="ItemNumber" class="form-control" minlength="4" maxlength="20" />
+                            <ValidationMessage For="@(() => teacher.ResidentialCity)" />
+                        </div>
+                        <div class="col-4">
+                            <span style="color: red">*</span>
+                            <label style="font-weight:600">Pin Code of Residence</label>
+                            <input @bind-value="@teacher.ResidentialPinCode" id="ItemNumber" class="form-control" minlength="4" maxlength="20" />
+                            <ValidationMessage For="@(() => teacher.ResidentialPinCode)" />
+                        </div>
+                    </div>
+
+                </div>
+                <hr />
+                <div>
+                    <div style="text-align:center; width:100%;  justify-content: center; align-content: center; align-items: center;">
+                        <span class="font-weight-bold" style="color:saddlebrown;font-size:20px">Qualification</span>
+                    </div>
+                    <div class="row mt-4 ml-2 mr-2">
+                        <div class="col-4">
+                            <label class="pure-material-checkbox">
+                                <input style="padding-left:10px;" type="checkbox" id="IsApprovalRequired" />
+                                <span for="IsApprovalRequired" style="font-weight:600">Graduate</span>
+                            </label>
+
+                        </div>
+                        <div class="col-4">
+                            <label class="pure-material-checkbox">
+                                <input style="padding-left:10px;" type="checkbox" id="IsMarketingOnly" />
+                                <span for="IsMarketingOnly" style="font-weight:600">Post Graduate</span>
+                            </label>
+
+                        </div>
+                        <div class="col-4">
+                            <label class="pure-material-checkbox">
+                                <input style="padding-left:10px;" type="checkbox" id="IsLotNumberRequired" />
+                                <span for="IsLotNumberRequired" style="font-weight:600">Doctorate</span>
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div class="row mt-4 ml-2 mr-2">
+
+                        <div class="col-4">
+
+                            <div class="input-group">
+                                <span style="color: red; margin-top:6px">*</span>
+                                <div class="input-group-append ml-2">
+                                    <input placeholder="Enter your degree name" style="width:auto" class="form-control" />
+
+                                </div>
+                                <ValidationMessage For="@(() => posItemToCreate.LowInventoryLevel)" />
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-4">
+
+                            <div class="input-group">
+                                <span style="color: red; margin-top:6px">*</span>
+
+                                <div class="input-group-append ml-2">
+                                    <input placeholder="Enter your degree name" style="width:auto" class="form-control" />
+
+                                </div>
+                                <ValidationMessage For="@(() => posItemToCreate.LowInventoryLevel)" />
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-4">
+                            <div class="input-group">
+                                <span style="color: red; margin-top:6px">*</span>
+                                <div class="input-group-append ml-2">
+                                    <input placeholder="Enter your degree name" style="width:auto" class="form-control" />
+                                </div>
+                                <ValidationMessage For="@(() => posItemToCreate.MaximumOrderQuantity)" />
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <hr />
+                <div>
+                    <div style="text-align:center; width:100%;  justify-content: center; align-content: center; align-items: center;">
+                        <span class="font-weight-bold" style="color:saddlebrown;font-size:20px">Professional</span>
+                    </div>
+
+
+                    <div class="row mt-4 ml-2 mr-2">
+
+
+                        <div class="col-4">
+                            <span style="color: red">*</span>
+                            <label style="font-weight:600">Experience in Years</label>
+                            <input @bind-value="@teacher.ExperienceInYears" id="ItemNumber" class="form-control" minlength="4" maxlength="20" />
+                            <ValidationMessage For="@(() => teacher.ExperienceInYears)" />
+                        </div>
+
+                        <div class="col-4">
+                            <span style="color: red">*</span>
+                            <label style="font-weight:600">Rate Per Class in Rupees</label>
+                            <input @bind-value="@teacher.RatePerClassInRupees" id="ItemNumber" class="form-control" minlength="4" maxlength="20" />
+                            <ValidationMessage For="@(() => teacher.RatePerClassInRupees)" />
+                        </div>
+
+                        <div class="col-4">
+                            <span style="color: red">*</span>
+                            <label style="font-weight:600">Subject you wish to teach</label>
+                            <select class="form-control">
+                                <option style="background-color: lightgrey" value="">Select the Year</option>
+
+                                <option style="background-color: lightgrey">English</option>
+                                <option style="background-color: lightgrey">Mathematics</option>
+                                <option style="background-color: lightgrey">Biology</option>
+                                <option style="background-color: lightgrey">Physics</option>
+                                <option style="background-color: lightgrey">Chemistry</option>
+                                <option style="background-color: lightgrey">Accounts</option>
+                                <option style="background-color: lightgrey">Economics</option>
+                                <option style="background-color: lightgrey">History</option>
+
+                            </select>
+                            <ValidationMessage For="@(() => teacher.SubjectYouWishToTeach)" />
+                        </div>
+                    </div>
+
+                    <div class="row mt-4 ml-2 mr-2">
+
+                        <div class="col-4">
+                            <span style="color: red">*</span>
+                            <label style="font-weight:600">Preferred Language</label>
+                            <input id="ItemNumber" class="form-control" minlength="4" maxlength="20" />
+                            <ValidationMessage For="@(() => teacher.PrefferedLanguage)" />
+                        </div>
+                        <div class="col-4">
+                            <span style="color: red">*</span>
+                            <label style="font-weight:600">Alternative Language</label>
+                            <input id="ItemNumber" class="form-control" minlength="4" maxlength="20" />
+                            <ValidationMessage For="@(() => teacher.AlternativeLanguage)" />
+                        </div>
+                        <div class="col-4">
+                            <label style="font-weight:600"> Upload your Identification document </label>
+                            <div class="form-group">
+
+                                <div class="btn btn-outlined" style="background-color: #232122; color:white; width:150px; height: 45px; padding:10px">
+                                    <label for="imageUpload">Choose Image</label>
+                                    <input type="file" id="imageUpload" accept="image/*" style="display: none" />
+                                </div>
+                                <img class="ml-2" src="Image/NoImageAvailableGrey.png" style="height:100px;" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+             Modal Footer
+            <div class="modal-footer" style=" height:80px; justify-content: center; align-content: center; align-items: center;">
+
+                <button type="submit" class="footer-button-color" disabled>Submit</button>
+
+                <button type="button" class="footer-button-color">Cancel</button>
+
+            </div>
+
+
+        </EditForm>
+
+        <button type="button" @onclick="@CancelBrand" class="footer-button-color">  Cancel </button>
+
+    </div>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}

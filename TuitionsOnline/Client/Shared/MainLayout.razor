@@ -1,0 +1,21 @@
+﻿@inherits LayoutComponentBase
+
+@using Blazored.Modal
+@using Blazored.Toast
+
+<BlazoredModal HideCloseButton="true" />
+
+
+<div class="main resolution_style" style="background-color: #f2f0e9; position: absolute; z-index:10000">
+    <BlazoredToasts  Position="Blazored.Toast.Configuration.ToastPosition.TopRight"/>
+</div>
+
+<body>
+    <NavMenu />
+
+    <div class="container">
+        @Body
+    </div>
+
+
+</body>
